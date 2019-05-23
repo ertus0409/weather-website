@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (event) => {
     messageOne.textContent = '';
     
     // Fetching data
-    fetch('http://localhost:3000/weather?address=' + encodeURI(searchElement.value)).then((response) => {
+    fetch('/weather?address=' + encodeURI(searchElement.value)).then((response) => {
         response.json().then((data) => {
 
             // Rendering response data to the UI
@@ -24,7 +24,6 @@ weatherForm.addEventListener('submit', (event) => {
                 messageOne.textContent = data.location;
                 messageTwo.textContent = data.forecast;
             }
-            
             
         });
     });
